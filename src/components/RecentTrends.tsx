@@ -6,39 +6,39 @@ import { TrendingUp, TrendingDown, Minus } from 'lucide-react';
 
 const trendsData = [
   {
-    skill: 'Artificial Intelligence',
-    change: 67,
-    status: 'rising',
-    timeframe: '7 days',
-    jobs: 1234
-  },
-  {
-    skill: 'Remote Work',
-    change: 23,
-    status: 'rising',
-    timeframe: '14 days',
-    jobs: 8945
-  },
-  {
-    skill: 'Blockchain',
-    change: -12,
-    status: 'falling',
-    timeframe: '30 days',
-    jobs: 567
-  },
-  {
-    skill: 'Cloud Computing',
+    skill: 'E-commerce Development',
     change: 45,
     status: 'rising',
     timeframe: '7 days',
-    jobs: 2890
+    jobs: 567
   },
   {
-    skill: 'Cybersecurity',
+    skill: 'Digital Marketing',
+    change: 32,
+    status: 'rising',
+    timeframe: '14 days',
+    jobs: 892
+  },
+  {
+    skill: 'Mobile App Development',
+    change: 28,
+    status: 'rising',
+    timeframe: '7 days',
+    jobs: 423
+  },
+  {
+    skill: 'Data Entry',
+    change: -8,
+    status: 'falling',
+    timeframe: '30 days',
+    jobs: 234
+  },
+  {
+    skill: 'Content Writing',
     change: 0,
     status: 'stable',
     timeframe: '14 days',
-    jobs: 1678
+    jobs: 345
   },
 ];
 
@@ -68,18 +68,18 @@ export function RecentTrends() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Recent Trends</CardTitle>
+        <CardTitle className="text-base sm:text-lg">Pakistan Market Trends</CardTitle>
       </CardHeader>
-      <CardContent className="space-y-4">
+      <CardContent className="space-y-3 sm:space-y-4">
         {trendsData.map((trend, index) => (
           <div key={index} className="flex items-center justify-between p-3 rounded-lg border bg-slate-50/50">
-            <div className="flex-1">
-              <h4 className="font-medium text-slate-900">{trend.skill}</h4>
-              <p className="text-sm text-slate-500">{trend.jobs} active jobs</p>
+            <div className="flex-1 min-w-0">
+              <h4 className="font-medium text-slate-900 text-sm sm:text-base truncate">{trend.skill}</h4>
+              <p className="text-xs sm:text-sm text-slate-500">{trend.jobs} active jobs</p>
             </div>
             
-            <div className="flex items-center gap-3">
-              <Badge className={getStatusColor(trend.status)}>
+            <div className="flex items-center gap-2 sm:gap-3 ml-2">
+              <Badge className={`${getStatusColor(trend.status)} text-xs px-2 py-1`}>
                 {getIcon(trend.status)}
                 {trend.change !== 0 && (
                   <span className="ml-1">
@@ -88,7 +88,7 @@ export function RecentTrends() {
                 )}
                 {trend.change === 0 && <span className="ml-1">Stable</span>}
               </Badge>
-              <span className="text-xs text-slate-400">{trend.timeframe}</span>
+              <span className="text-xs text-slate-400 hidden sm:inline">{trend.timeframe}</span>
             </div>
           </div>
         ))}

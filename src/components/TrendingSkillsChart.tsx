@@ -4,22 +4,22 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 const skillsData = [
-  { skill: 'Python', demand: 2847, growth: 23 },
-  { skill: 'React', demand: 2156, growth: 18 },
-  { skill: 'AWS', demand: 1943, growth: 31 },
-  { skill: 'TypeScript', demand: 1678, growth: 41 },
-  { skill: 'Node.js', demand: 1534, growth: 15 },
-  { skill: 'Docker', demand: 1423, growth: 28 },
-  { skill: 'Kubernetes', demand: 1298, growth: 35 },
-  { skill: 'GraphQL', demand: 1156, growth: 52 },
+  { skill: 'PHP', demand: 1247, growth: 28 },
+  { skill: 'JavaScript', demand: 1156, growth: 22 },
+  { skill: 'Python', demand: 987, growth: 35 },
+  { skill: 'Laravel', demand: 845, growth: 18 },
+  { skill: 'React', demand: 734, growth: 42 },
+  { skill: 'WordPress', demand: 692, growth: 12 },
+  { skill: 'MySQL', demand: 634, growth: 15 },
+  { skill: 'Node.js', demand: 567, growth: 38 },
 ];
 
 export function TrendingSkillsChart() {
   return (
-    <Card className="col-span-2">
+    <Card className="col-span-1 xl:col-span-2">
       <CardHeader>
-        <CardTitle className="flex items-center gap-2">
-          Most In-Demand Skills
+        <CardTitle className="flex flex-col sm:flex-row sm:items-center gap-2">
+          <span>Most In-Demand Skills in Pakistan</span>
           <span className="text-sm font-normal text-slate-500">(Last 30 days)</span>
         </CardTitle>
       </CardHeader>
@@ -31,6 +31,9 @@ export function TrendingSkillsChart() {
               dataKey="skill" 
               tick={{ fontSize: 12 }}
               stroke="#64748b"
+              angle={-45}
+              textAnchor="end"
+              height={80}
             />
             <YAxis 
               tick={{ fontSize: 12 }}
@@ -55,8 +58,8 @@ export function TrendingSkillsChart() {
             />
             <defs>
               <linearGradient id="skillGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#3b82f6" />
-                <stop offset="100%" stopColor="#1d4ed8" />
+                <stop offset="0%" stopColor="#16a34a" />
+                <stop offset="100%" stopColor="#15803d" />
               </linearGradient>
             </defs>
           </BarChart>
